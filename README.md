@@ -11,15 +11,15 @@ The main Prisma repository (`Palqee/prisma-ai`) is private, so image URLs hosted
 Reference assets via jsDelivr's GitHub CDN. Pin to a tag for stability.
 
 ```markdown
-![Palqee Prisma](https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v1/prisma/palqee_prisma_banner_dark.png)
+![Palqee Prisma](https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v2/prisma/palqee_prisma_banner_dark.png)
 ```
 
 For light/dark mode support in GitHub-flavored Markdown:
 
 ```markdown
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v1/prisma/palqee_prisma_banner_dark.png">
-  <img src="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v1/prisma/palqee_prisma_banner_light.png" alt="Palqee Prisma">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v2/prisma/palqee_prisma_banner_dark.png">
+  <img src="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v2/prisma/palqee_prisma_banner_light.png" alt="Palqee Prisma">
 </picture>
 ```
 
@@ -36,7 +36,7 @@ For light/dark mode support in GitHub-flavored Markdown:
 
 ## Versioning
 
-URLs should pin a tag (`@v1`) rather than `@main`. When assets change in a breaking way (rename, removal), cut a new major tag and update consumers.
+URLs should pin a tag (`@v2`) rather than `@main`. When assets change in a breaking way (rename, removal), cut a new major tag and update consumers.
 
 ## License
 
