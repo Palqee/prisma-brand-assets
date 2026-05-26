@@ -13,7 +13,7 @@ Reference assets via jsDelivr's GitHub CDN. Pin to a tag for stability.
 **Prefer SVG** — sharper at any size, no DPR juggling. PyPI and GitHub both render external SVGs via `<img>`.
 
 ```markdown
-![Palqee Prisma](https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v3/prisma/palqee_prisma_banner_dark.svg)
+![Palqee Prisma](https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v3.0/prisma/palqee_prisma_banner_dark.svg)
 ```
 
 PNG is kept as a fallback for tooling that doesn't handle SVG (some doc generators, older renderers).
@@ -22,8 +22,8 @@ For light/dark mode support in GitHub-flavored Markdown:
 
 ```html
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v3/prisma/palqee_prisma_banner_dark.svg">
-  <img src="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v3/prisma/palqee_prisma_banner_light.svg" alt="Palqee Prisma" width="1280">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v3.0/prisma/palqee_prisma_banner_dark.svg">
+  <img src="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v3.0/prisma/palqee_prisma_banner_light.svg" alt="Palqee Prisma" width="1280">
 </picture>
 ```
 
@@ -46,13 +46,13 @@ Canonical aspect ratio: 4:1 (1280×320 viewBox).
 
 ## Versioning
 
-URLs should pin a tag (`@v3`) rather than `@main`. When assets change in a breaking way (rename, removal), cut a new major tag and update consumers.
+URLs should pin a tag (`@v3.0`) rather than `@main`. When assets change in a breaking way (rename, removal), cut a new major tag and update consumers.
 
 | Tag | Notes |
 |---|---|
 | `@v1` | Initial PNG release (2560×640 / 2560×840) — rendered oversized on PyPI |
 | `@v2` | Regenerated PNGs at 1280×320, tighter content |
-| `@v3` | Added SVG variants alongside PNGs |
+| `@v3.0` | Added SVG variants alongside PNGs |
 
 ## License
 
