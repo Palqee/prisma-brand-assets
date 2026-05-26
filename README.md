@@ -10,33 +10,49 @@ The main Prisma repository (`Palqee/prisma-ai`) is private, so image URLs hosted
 
 Reference assets via jsDelivr's GitHub CDN. Pin to a tag for stability.
 
+**Prefer SVG** — sharper at any size, no DPR juggling. PyPI and GitHub both render external SVGs via `<img>`.
+
 ```markdown
-![Palqee Prisma](https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v2/prisma/palqee_prisma_banner_dark.png)
+![Palqee Prisma](https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v3/prisma/palqee_prisma_banner_dark.svg)
 ```
+
+PNG is kept as a fallback for tooling that doesn't handle SVG (some doc generators, older renderers).
 
 For light/dark mode support in GitHub-flavored Markdown:
 
-```markdown
+```html
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v2/prisma/palqee_prisma_banner_dark.png">
-  <img src="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v2/prisma/palqee_prisma_banner_light.png" alt="Palqee Prisma">
+  <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v3/prisma/palqee_prisma_banner_dark.svg">
+  <img src="https://cdn.jsdelivr.net/gh/Palqee/prisma-brand-assets@v3/prisma/palqee_prisma_banner_light.svg" alt="Palqee Prisma" width="1280">
 </picture>
 ```
 
+Always set `width` on the `<img>` — PyPI's `readme-renderer` respects it; SVGs without an explicit width will render at the container width and look oversized.
+
 ## Available assets
 
-| File | Use |
+Each banner ships in both formats (`.svg` preferred, `.png` fallback) and in dark/light variants.
+
+| File (omit extension) | Use |
 |---|---|
-| `prisma/palqee_prisma_banner_dark.png` | Main Prisma banner — dark backgrounds |
-| `prisma/palqee_prisma_banner_light.png` | Main Prisma banner — light backgrounds |
-| `prisma/palqee_prisma_client_banner_dark.png` | `palqee-prisma-client` banner — dark |
-| `prisma/palqee_prisma_client_banner_light.png` | `palqee-prisma-client` banner — light |
-| `prisma/palqee_prisma_otel_banner_dark.png` | `palqee-prisma-otel` banner — dark |
-| `prisma/palqee_prisma_otel_banner_light.png` | `palqee-prisma-otel` banner — light |
+| `prisma/palqee_prisma_banner_dark` | Main Prisma banner — dark backgrounds |
+| `prisma/palqee_prisma_banner_light` | Main Prisma banner — light backgrounds |
+| `prisma/palqee_prisma_client_banner_dark` | `palqee-prisma-client` banner — dark |
+| `prisma/palqee_prisma_client_banner_light` | `palqee-prisma-client` banner — light |
+| `prisma/palqee_prisma_otel_banner_dark` | `palqee-prisma-otel` banner — dark |
+| `prisma/palqee_prisma_otel_banner_light` | `palqee-prisma-otel` banner — light |
+
+Canonical aspect ratio: 4:1 (1280×320 viewBox).
 
 ## Versioning
 
-URLs should pin a tag (`@v2`) rather than `@main`. When assets change in a breaking way (rename, removal), cut a new major tag and update consumers.
+URLs should pin a tag (`@v3`) rather than `@main`. When assets change in a breaking way (rename, removal), cut a new major tag and update consumers.
+
+| Tag | Notes |
+|---|---|
+| `@v1` | Initial PNG release (2560×640 / 2560×840) — rendered oversized on PyPI |
+| `@v2` | Regenerated PNGs at 1280×320, tighter content |
+| `@v3` | Added SVG variants alongside PNGs |
 
 ## License
 
